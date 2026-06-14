@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
   // Data Structure
   const personalInfo = {
-    name: "Mahedi Hasan", // [cite: 1]
+    name: "Rubayed", // [cite: 1]
     title: "Lecturer in Textile Engineering & Material Science Researcher", // [cite: 4, 20]
     address: "481, Master Bari, Kawlar, Dakshinkhan, Dhaka-1230, Bangladesh", // [cite: 2]
     phone: "+8801521493722", // [cite: 2]
