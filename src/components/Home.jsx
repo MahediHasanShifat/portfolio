@@ -3,22 +3,22 @@ import React from 'react';
 const Home = () => {
   // Data Structure
   const personalInfo = {
-    name: "Mahedi Hasan", // [cite: 1]
-    title: "Lecturer in Textile Engineering & Material Science Researcher", // [cite: 4, 20]
-    address: "481, Master Bari, Kawlar, Dakshinkhan, Dhaka-1230, Bangladesh", // [cite: 2]
-    phone: "+8801521493722", // [cite: 2]
-    email: "mahedi.hasan@seu.edu.bd", // [cite: 2]
-    linkedin: "LinkedIn", // [cite: 2]
-    researchgate: "ResearchGate", // [cite: 2]
-    image: "/assets/mahedi.jpg", // <-- Add your image path here
+    name: "Mahedi Hasan",
+    title: "Lecturer in Textile Engineering & Material Science Researcher",
+    address: "481, Master Bari, Kawlar, Dakshinkhan, Dhaka-1230, Bangladesh",
+    phone: "+8801521493722",
+    email: "mahedi.hasan@seu.edu.bd",
+    linkedin: "https://www.linkedin.com/in/mahedi-hasan-b929b8142/",
+    researchgate: "https://www.researchgate.net/profile/Mahedi-Hasan-65?ev=hdr_xprf", // Update with your ResearchGate URL
+    image: "/assets/mahedi.jpg",
     about: "I am a dedicated academic and researcher with a strong foundation in Textile Engineering and an expanding expertise in Material Science. Currently pursuing an M.Sc. in Material Science at BUET, I serve as a Lecturer at Southeast University. My passion lies in bridging the gap between theoretical material science and practical, sustainable textile applications. I am deeply committed to applying Outcome-Based Education (OBE) frameworks to foster the next generation of engineers, while actively contributing to advanced research in functional and environmentally responsible materials.",
     interests: [
-      "Surface & Interfacial Engineering", // [cite: 33]
-      "Sustainable Polymer Coatings", // [cite: 35]
-      "Electrospun Nanomaterials", // [cite: 36]
-      "Functional & Protective Textiles", // [cite: 35]
-      "Stimuli-Responsive Polymers", // [cite: 37]
-      "Bio-polymer Based Composites" // [cite: 37]
+      "Surface & Interfacial Engineering",
+      "Sustainable Polymer Coatings",
+      "Electrospun Nanomaterials",
+      "Functional & Protective Textiles",
+      "Stimuli-Responsive Polymers",
+      "Bio-polymer Based Composites"
     ]
   };
 
@@ -31,10 +31,16 @@ const Home = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">{personalInfo.name}</h1>
           <p className="text-xl md:text-2xl text-blue-400 font-medium mb-6">{personalInfo.title}</p>
           
-          <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3 text-sm text-slate-400 font-medium mb-10">
+          <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3 text-sm text-slate-400 font-medium mb-6">
             <span className="flex items-center gap-2">📍 {personalInfo.address}</span>
             <span className="flex items-center gap-2">📧 {personalInfo.email}</span>
             <span className="flex items-center gap-2">📞 {personalInfo.phone}</span>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center md:justify-start gap-4 mb-10">
+            <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-white transition-colors font-bold underline">LinkedIn</a>
+            <a href={personalInfo.researchgate} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-white transition-colors font-bold underline">ResearchGate</a>
           </div>
 
           {/* About Me Section */}
@@ -67,17 +73,12 @@ const Home = () => {
 
         {/* Profile Image Section */}
         <div className="w-56 h-56 md:w-72 md:h-72 shrink-0 relative group pt-4 md:pt-0">
-          {/* Decorative background blur ring */}
           <div className="absolute inset-0 bg-blue-500 rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-          
           <img 
             src={personalInfo.image} 
             alt={personalInfo.name} 
             className="relative w-full h-full object-cover rounded-full border-4 border-slate-800 shadow-2xl z-10"
-            onError={(e) => {
-              // Fallback if the image doesn't load immediately
-              e.target.src = "https://via.placeholder.com/300/1e293b/ffffff?text=MH";
-            }}
+            onError={(e) => { e.target.src = "https://via.placeholder.com/300/1e293b/ffffff?text=MH"; }}
           />
         </div>
 
